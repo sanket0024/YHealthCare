@@ -1,0 +1,40 @@
+<div class="dialog">
+    <h2 class="mat-title">Sign Up</h2>
+    <div [formGroup]="signupForm">
+        <div mat-dialog-content>
+            <div>
+                <mat-form-field class="mat-input-wrapper">
+                    <input matInput type="text" formControlName="fName" name="fName" placeholder="First Name" required>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="mat-input-wrapper">
+                    <input matInput type="text" formControlName="lName" name="lName" placeholder="Last Name" required>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="mat-input-wrapper">
+                    <input matInput type="email" formControlName="email" name="email" placeholder="Email">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="mat-input-wrapper">
+                    <input matInput type="password" formControlName="password" name="password" placeholder="Password">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="mat-input-wrapper">
+                    <input matInput type="password" formControlName="retypePassword" name="retypePassword" placeholder="Retype Password">
+                </mat-form-field>
+            </div>
+        </div>
+        <div mat-dialog-actions class="row-flex">
+            <div class="col">
+                <button mat-button class="btn btn-primary btn-block button-signup mr-5" [mat-dialog-close] (click)="save()">Sign Up</button>
+            </div>
+            <div class="col">
+                <button mat-button class="btn btn-light btn-block button-signup mr-5" mat-dialog-close (click)="close()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

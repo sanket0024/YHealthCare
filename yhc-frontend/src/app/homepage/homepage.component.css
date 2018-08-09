@@ -1,0 +1,73 @@
+.buttons {
+    background-color: #FF6666;
+    align-content: right;
+    border-style: none;
+    color: white;
+}
+
+.logo-homepage {
+    height: 40%;
+}
+
+.margin-top-login {
+    margin-top: 11%;
+}
+
+.margin-top-logo {
+    margin-top: 8%;
+}
+
+.font-color-logo {
+    font-family: Poppins-Medium;
+    color: darkred;
+}
+
+.background {
+    background-color: #FAFAFA;
+}
+
+.error-msg {
+    display: block;
+    position: absolute;
+    font-size: 75%;
+    bottom: -1.5em;
+    color: red;
+}
+
+.login-box{
+    border: 1px solid orange;
+    position: relative;
+}
+
+.input-login-fields{
+    font-family: Poppins-Medium;
+    line-height: 1.5;
+    display: block;
+    border-radius: 25px;
+    background: #e6e6e6;
+    color: #666666;
+}
+
+.button-login {
+    font-family: Poppins-Medium;
+    line-height: 1.5;
+    display: block;
+    border-radius: 25px;
+}
+
+.forgot {
+    font-family: Poppins-Medium;
+    font-size: 15px;
+    color: darkgray;
+    text-align: right;
+}
+
+.sign-up-now{
+    font-family: Poppins-Medium;
+    font-size: 15px;
+    color: purple;
+    text-align: left;
+    padding-left: 20px;
+    text-decoration: underline purple;
+    cursor: pointer;
+}
