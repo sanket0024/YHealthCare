@@ -40,7 +40,11 @@ const yhcRoutes: Routes = [
         MatDialogModule,
         MatFormFieldModule,
         BrowserAnimationsModule,
-        MatInputModule
+        MatInputModule,
+        RouterModule.forRoot(
+            yhcRoutes,
+            { enableTracing: true }
+        )
     ],
     providers: [],
     bootstrap: [AppComponent],

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 import {FormBuilder, FormControl, FormGroup, ValidatorFn, Validators, ValidationErrors} from '@angular/forms';
-import { AbstractControl } from '@angular/forms';
 
 @Component({
     selector: 'app-signup',
@@ -31,7 +30,7 @@ export class SignupComponent implements OnInit {
 
     matchingPassword(fc: FormControl) {
         const temp = this.signupForm.get('password').value;
-        let res: ValidationErrors = fc.value === this.signupForm.get('password').value ? null : {
+        const res: ValidationErrors = fc.value === this.signupForm.get('password').value ? null : {
             NotEqual: 'true'
         };
         return res;
