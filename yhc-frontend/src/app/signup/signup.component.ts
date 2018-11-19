@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 import {FormBuilder, FormControl, FormGroup, ValidatorFn, Validators, ValidationErrors} from '@angular/forms';
+import {Router} from '@angular/router';
+import {DataService} from '../services/data.service';
+import {User} from '../services/interface/User';
 
 @Component({
     selector: 'app-signup',
+    exportAs: 'modal',
     templateUrl: './signup.component.html',
     styleUrls: ['./signup.component.css']
 })
@@ -13,18 +17,20 @@ export class SignupComponent implements OnInit {
     submitted = false;
 
     constructor(private dialogRef: MatDialogRef<SignupComponent>,
-                private fb: FormBuilder) { }
+                private fb: FormBuilder,
+                private router: Router,
+                private dataService: DataService) { }
 
     ngOnInit() {
         this.signupForm = this.fb.group({
-            'fName': ['', Validators.required],
-            'lName': ['', Validators.required],
+            'firstName': ['', Validators.required],
+            'lastName': ['', Validators.required],
             'email': ['', [Validators.required, Validators.email]],
             'password': ['', [Validators.required,
                 Validators.minLength(0),
                 Validators.maxLength(16),
                 Validators.pattern('^(?=.*[a-z])(?=.*[!@#\$%\^&\*])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9!@#\$%\^&\*]+$')]],
-            'retypePassword': ['', [Validators.required], this.matchingPassword.bind(this)]
+            'retypePassword': ['', [Validators.required]]// , this.matchingPassword.bind(this)]
         });
     }
 
@@ -41,8 +47,7 @@ export class SignupComponent implements OnInit {
         if (this.signupForm.invalid) {
             return;
         }
-        console.log('Sign up successful');
-        console.log(this.signupForm.value);
+        this.dataService.createUser(this.signupForm.value as User);
         this.dialogRef.close(this.signupForm.value);
     }
 

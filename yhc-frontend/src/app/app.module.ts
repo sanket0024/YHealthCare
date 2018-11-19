@@ -5,6 +5,7 @@ import { MatDialogModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpClient, HttpClientModule, HttpHeaders} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -15,10 +16,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule, Routes} from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {DataService} from './services/data.service';
 
 const yhcRoutes: Routes = [
-    {path: 'home', component: LandingpageComponent},
-    {path: '', component: HomepageComponent},
+    {path: 'afterLogin', component: LandingpageComponent},
+    {path: 'index', component: HomepageComponent},
+    {path: '', redirectTo: '/index', pathMatch: 'full'},
+    {path: 'index/(modal:signup)', component: SignupComponent, outlet: 'modal'},
     {path: '**', component: PageNotFoundComponent}
     ];
 
@@ -44,9 +48,11 @@ const yhcRoutes: Routes = [
         RouterModule.forRoot(
             yhcRoutes,
             { enableTracing: true }
-        )
+        ),
+        HttpClientModule
     ],
-    providers: [],
+    providers: [
+        DataService],
     bootstrap: [AppComponent],
     entryComponents: [SignupComponent]
 })

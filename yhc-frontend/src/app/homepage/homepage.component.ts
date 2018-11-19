@@ -30,6 +30,7 @@ export class HomepageComponent implements OnInit {
         dialogConfig.disableClose = true;
         dialogConfig.autoFocus = true;
         dialogConfig.closeOnNavigation = true;
+        console.log(this.dialog);
         this.dialog.open(SignupComponent, dialogConfig);
     }
 

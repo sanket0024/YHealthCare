@@ -3,16 +3,15 @@
         <button class="buttons">About We Care</button>
     </app-navbar>
     <div class="container">
-        <div class="flex-row mt-5">
+        <div class="flex-row mt-5 text-center">
             <h4>Name the client/hospital/insurance company</h4>
         </div>
-        <div class="flex-row mt 3">
+        <div class="flex-row mt 3 text-center">
             <p class="blockquote-footer">We are delight to serve you. Thank you for trusting us!!</p>
         </div>
         <div class="row">
-            <div class="col margin-top-logo mr-5">
+            <div class="col margin-top-logo ml-5">
                 <img class="logo-homepage" src="assets/images/hospital.png" alt="hospital">
-                <h3 class="font-italic font-weight-bold font-color-logo">WE Care</h3>
             </div>
             <div class="col margin-top-login ml-5">
                 <form [formGroup]="loginForm" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
@@ -36,7 +35,7 @@
                         </div>
                     </div>
                     <div class="sign-up-now">
-                        <p (click)="openDialog()">Not registered yet? Sign-Up Now!</p>
+                        <a (click)="openDialog()">Not registered yet? Sign-Up Now!</a>
                     </div>
                 </form>
             </div>
