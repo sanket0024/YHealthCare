@@ -82,9 +82,14 @@ yhc/.vscode
 yhc/mvnw
 yhc/mvnw.cmd
 yhc/yhc-backend.iml
-Yhc/target
+yhc/target
+yhc/bin/
 
 yhc-frontend/.idea
+yhc-frontend/e2e
+yhc-frontend/node_modules
+yhc-frontend/package-lock.json
+yhc-frontend/.editorconfig
 
 
 
