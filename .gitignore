@@ -90,6 +90,8 @@ yhc-frontend/e2e
 yhc-frontend/node_modules
 yhc-frontend/package-lock.json
 yhc-frontend/.editorconfig
-
+yhc-frontend/package-lock.json
+yhc-frontend/node_modules
+yhc-frontend/.vscode/
 
 
